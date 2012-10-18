@@ -22,7 +22,7 @@ module Viralio
 	    	if results['status'] == 200
 	    		share = results['share']
 	    	else
-	    		error = results['error']	
+	    		error = results['status']	# 400, 401, 406
 	    	end	
 	    end
 

@@ -19,10 +19,10 @@ module Viralio
 	    def subscribe(mail, from)
 	    	subscription = RestClient.post API_URL_subscription, {:key => @api_key, :mail => mail, :from => from}
 	    	results = JSON.parse(subscription.to_str)
-	    	if results['status'] == 200
+	    	if results['status'] == 200 || results['status'] == 400
 	    		share = results['share']
 	    	else
-	    		error = results['status']	# 400, 401, 406
+	    		error = results['status']	#401, 406
 	    	end	
 	    end
 
